@@ -216,9 +216,9 @@ The `exclusion` block supports the following:
 
 The `excluded_rule_set` block supports the following:
 
-* `type` - (Optional) The rule set type. The only possible value include `Microsoft_DefaultRuleSet` and `OWASP`. Defaults to `OWASP`.
+* `type` - (Optional) The rule set type. Possible values are `Microsoft_DefaultRuleSet`, `Microsoft_BotManagerRuleSet` and `OWASP`. Defaults to `OWASP`.
 
-* `version` - (Optional) The rule set version. The only possible value include `2.1` (for rule set type `Microsoft_DefaultRuleSet`) and `3.2` (for rule set type `OWASP`). Defaults to `3.2`.
+* `version` - (Optional) The rule set version. Possible values are `1.0` (for rule set type `Microsoft_BotManagerRuleSet`), `2.1` (for rule set type `Microsoft_DefaultRuleSet`) and `3.2` (for rule set type `OWASP`). Defaults to `3.2`.
 
 * `rule_group` - (Optional) One or more `rule_group` block defined below.
 
@@ -257,7 +257,7 @@ The `rule` block supports the following:
 
 * `enabled` - (Optional) Describes if the managed rule is in enabled state or disabled state.
 
-* `action` - (Optional) Describes the override action to be applied when rule matches. Possible values are `Allow`, `AnomalyScoring`, `Block` and `Log`.
+* `action` - (Optional) Describes the override action to be applied when rule matches. Possible values are `Allow`, `AnomalyScoring`, `Block`, `JSChallenge` and `Log`. `JSChallenge` is only valid for rulesets of type `Microsoft_BotManagerRuleSet`.
 
 ---
 
